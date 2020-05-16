@@ -1,9 +1,11 @@
 import java.util.Scanner;
 
 public class Main {
+	private static final String MENSAGEM_OK = "OK, você está apto a ver este filme.";
+	private static final String MENSAGEM_NAO_OK = "Desculpe, este título não está disponível para a sua idade.";
 
 	public static void main(String[] args) {
-
+		
 		Scanner sc = new Scanner(System.in);
 
 		System.out.print("Informe a sua idade: ");
@@ -29,9 +31,9 @@ public class Main {
 			(classificacao.equals("MI") && idade >= 18);
 
 		if (apto == true) {
-			System.out.println("OK, você está apto a ver este filme.");
+			System.out.println(MENSAGEM_OK);
 		} else {
-			System.out.println("Desculpe, este título não está disponível para a sua idade.");
+			System.out.println(MENSAGEM_NAO_OK);
 		}
 
 		sc.close();

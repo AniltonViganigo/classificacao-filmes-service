@@ -23,35 +23,15 @@ public class Main {
 
 		System.out.println();
 
-		if (idade < 12 && classificacao.equals("L")) {
-			System.out.println("OK, você está apto a ver este filme.");
-		} else if (idade < 12 && classificacao.equals("PA")) {
-			System.out.println("Desculpe, este título não está disponível para a sua idade.");
-		} else if (idade < 12 && classificacao.equals("AD") {
-			System.out.println("Desculpe, este título não está disponível para a sua idade.");
-		} else if (idade < 12 && classificacao.equals("MI")) {
-			System.out.println("Desculpe, este título não está disponível para a sua idade.");
-		} else if (idade >= 12 && classificacao.equals("L")) {
-			System.out.println("OK, você está apto a ver este filme.");
-		} else if (idade >= 12 && classificacao.equals("PA")) {
-			System.out.println("OK, você está apto a ver este filme.");
-		} else if (idade < 14 && classificacao.equals("AD") {
-			System.out.println("Desculpe, este título não está disponível para a sua idade.");
-		} else if (idade < 14 && classificacao.equals("MI") {
-			System.out.println("Desculpe, este título não está disponível para a sua idade.");
-		} else if (idade >= 14 && classificacao.equals("L")) {
-			System.out.println("OK, você está apto a ver este filme.");
-		} else if (idade >= 14 && classificacao.equals("PA")) {
-			System.out.println("OK, você está apto a ver este filme.");
-		} else if (idade >= 14 && classificacao.equals("AD")) {
-			System.out.println("OK, você está apto a ver este filme.");
-		} else if (idade < 18 && classificacao.equals("MI")) {
-			System.out.println("Desculpe, este título não está disponível para a sua idade.");
-		} else if (idade >= 18) {
+		Boolean apto = classificacao.equals("L") ||
+			(classificacao.equals("PA") && idade >= 12) ||
+			(classificacao.equals("AD") && idade >= 14) ||
+			(classificacao.equals("MI") && idade >= 18);
+
+		if (apto == true) {
 			System.out.println("OK, você está apto a ver este filme.");
 		} else {
-			System.out.println("===========================================================");
-			System.out.println("Muito obrigado!");
+			System.out.println("Desculpe, este título não está disponível para a sua idade.");
 		}
 
 		sc.close();

@@ -23,18 +23,10 @@ public class Main {
 
 		System.out.println();
 
-		Boolean apto = false;
-		if (classificacao.equals("L")) {
-			apto = true;
-		} else if (classificacao.equals("PA") && idade >= 12) {
-			apto = true;
-		} else if (classificacao.equals("AD") && idade >= 14) {
-			apto = true;
-		} else if (classificacao.equals("MI") && idade >= 18) {
-			apto = true;
-		} else {
-			return false;
-		}
+		Boolean apto = classificacao.equals("L") ||
+			(classificacao.equals("PA") && idade >= 12) ||
+			(classificacao.equals("AD") && idade >= 14) ||
+			(classificacao.equals("MI") && idade >= 18);
 
 		if (apto == true) {
 			System.out.println("OK, você está apto a ver este filme.");
